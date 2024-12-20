@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .wishlist-header {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .wishlist-header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .wishlist-table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .wishlist-table th, .wishlist-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .wishlist-table th {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .wishlist-table img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .wishlist-price {
+            color: #e53935;
+            font-weight: bold;
+        }
+
+        .action-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-right: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .action-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .remove-btn {
+            background-color: #e53935;
+        }
+
+        .remove-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        select {
+            padding: 5px;
+            font-size: 1rem;
+            border-radius: 4px;
+          
+            outline: none;
+        }
+
+        @media (max-width: 768px) {
+            .wishlist-table th, .wishlist-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .wishlist-table img {
+                width: 60px;
+                height: 60px;
+            }
+
+            select {
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .wishlist-table {
+                width: 100%;
+            }
+
+            .wishlist-table th, .wishlist-table td {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .wishlist-table img {
+                width: 60px;
+                height: 60px;
+            }
+
+            select {
+                font-size: 0.8rem;
+            }
+
+            .action-btn {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wishlist-table th, .wishlist-table td {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+
+            .wishlist-table img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .wishlist-header h1 {
+                font-size: 1.5rem;
+            }
+
+            select {
+                font-size: 0.7rem;
+            }
+
+            .action-btn {
+                padding: 6px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wishlist-header">
+        <h1>My Wishlist</h1>
+    </div>
+    <table class="wishlist-table" id="wishlist-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Size</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="wishlist-body">
+            <!-- Wishlist items will be dynamically inserted here -->
+        </tbody>
+    </table>
+    <script>
+        const wishlistBody = document.getElementById('wishlist-body');
+
+        function loadWishlist() {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlistBody.innerHTML = ""; // Clear previous content
+
+            if (wishlist.length === 0) {
+                const row = document.createElement('tr');
+                const cell = document.createElement('td');
+                cell.colSpan = 5;
+                cell.textContent = "Your wishlist is empty!";
+                cell.style.textAlign = 'center';
+                row.appendChild(cell);
+                wishlistBody.appendChild(row);
+                return;
+            }
+
+            wishlist.forEach(item => wishlistBody.appendChild(createWishlistRow(item)));
+        }
+
+        function createWishlistRow(item) {
+            const row = document.createElement('tr');
+
+            // Image column
+            const imageCell = document.createElement('td');
+            const image = document.createElement('img');
+            image.src = item.image_url || 'fallback-image-url.jpg'; // Replace with your fallback image URL
+            image.alt = item.name;
+            imageCell.appendChild(image);
+
+            // Name column
+            const nameCell = document.createElement('td');
+            nameCell.textContent = item.name;
+
+            // Price column
+            const priceCell = document.createElement('td');
+            priceCell.textContent = item.price;
+            priceCell.classList.add('wishlist-price');
+
+            // Size column
+            const sizeCell = document.createElement('td');
+            const sizeSelect = document.createElement('select');
+            for (let i = 2.5; i <= 12; i += 0.5) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                sizeSelect.appendChild(option);
+            }
+            sizeCell.appendChild(sizeSelect);
+
+            // Actions column
+            const actionCell = document.createElement('td');
+            const addToBagBtn = document.createElement('button');
+            addToBagBtn.textContent = "Add to Bag";
+            addToBagBtn.classList.add('action-btn');
+
+            const removeBtn = document.createElement('button');
+            removeBtn.textContent = "Remove";
+            removeBtn.classList.add('action-btn', 'remove-btn');
+            removeBtn.addEventListener('click', () => removeWishlistItem(item));
+
+            actionCell.appendChild(addToBagBtn);
+            actionCell.appendChild(removeBtn);
+
+            row.appendChild(imageCell);
+            row.appendChild(nameCell);
+            row.appendChild(priceCell);
+            row.appendChild(sizeCell);
+            row.appendChild(actionCell);
+
+            return row;
+        }
+
+        function removeWishlistItem(item) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist = wishlist.filter(wishlistItem => wishlistItem.name !== item.name);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            loadWishlist(); // Reload the wishlist
+        }
+
+        // Load wishlist on page load
+        loadWishlist();
+    </script>
+</body>
+</html>
