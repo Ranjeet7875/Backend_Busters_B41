@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .product-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 20px;
+            gap: 40px;
+        }
+        .product-image {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .product-details {
+            max-width: 600px;
+        }
+        .product-details h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .product-details h3 {
+            font-size: 24px;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+        .product-details p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .size-container {
+            margin-bottom: 20px;
+        }
+        .size-container span {
+            display: inline-block;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .size-container span:hover {
+            background-color: #f0f0f0;
+        }
+        .notify-container {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #007BFF;
+            cursor: pointer;
+        }
+        .add-to-bag {
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .add-to-bag:hover {
+            background-color: #0056b3;
+        }
+        .delivery-info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .product-id {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #999;
+        }
+        .related-products {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .related-products h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .related-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .related-item {
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            background: white;
+            transition: box-shadow 0.3s ease;
+        }
+        .related-item:hover {
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+        }
+        .related-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .related-item h4 {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .related-item h3 {
+            font-size: 18px;
+            color: #007BFF;
+        }
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .related-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .related-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <img id="product-image" class="product-image" alt="Product Image">
+        <div class="product-details">
+            <h2 id="product-name"></h2>
+            <h3 id="product-price"></h3>
+            <p id="product-category"></p>
+            <p id="product-description">Unisex Lifestyle Shoes. Multiple Colours Available.</p>
+
+            <!-- Size Options -->
+            <div class="size-container" id="size-container"></div>
+            
+            <!-- Notify and Add to Bag -->
+            <div class="notify-container">Size Missing? <span>Sign up to be notified when the product comes back in stock. <strong>Notify Me</strong></span></div>
+            <button class="add-to-bag">Add to Bag</button>
+
+            <!-- Delivery Info -->
+            <div class="delivery-info">
+                Free delivery and returns on orders over <b>₹65.70</b>. Learn more<br>
+                Estimated Delivery: 3-5 business days.
+            </div>
+            <div class="product-id"></div>
+        </div>
+    </div>
+
+    <div class="related-products">
+        <h2>Related Products</h2>
+        <div id="related-container" class="related-container"></div>
+    </div>
+
+    <script>
+        // Fetch product details from localStorage
+        const productDetails = JSON.parse(localStorage.getItem('productDetails'));
+
+        // Populate product details
+        document.getElementById('product-image').src = productDetails.image_url || 'fallback-image.jpg';
+        document.getElementById('product-name').textContent = productDetails.name;
+        document.getElementById('product-price').textContent = `Price: ${productDetails.price}`;
+        document.getElementById('product-category').textContent = `Category: ${productDetails.category}`;
+
+        // Add size options dynamically
+        const sizeContainer = document.getElementById('size-container');
+        const sizes = Array.from({ length: 19 }, (_, i) => (2.5 + i * 0.5).toFixed(1));
+        sizes.forEach(size => {
+            const sizeElement = document.createElement('span');
+            sizeElement.textContent = size;
+            sizeContainer.appendChild(sizeElement);
+        });
+
+        // Fetch related products
+        async function fetchRelatedProducts() {
+            try {
+                const res = await fetch('https://reebokclone-5f711-default-rtdb.firebaseio.com/men_Cat.json');
+                const data = await res.json();
+                displayRelatedProducts(data);
+            } catch (err) {
+                console.error("Error fetching related products:", err);
+            }
+        }
+
+        function displayRelatedProducts(products) {
+            const relatedContainer = document.getElementById('related-container');
+            relatedContainer.textContent = ""; // Clear previous content
+
+            // Display up to 4 related products (excluding the current one)
+            products.filter(item => item.name !== productDetails.name).forEach(item => {
+                const relatedDiv = document.createElement('div');
+                relatedDiv.className = 'related-item';
+
+                const relatedImage = document.createElement('img');
+                relatedImage.src = item.image_url || 'fallback-image.jpg';
+                relatedImage.alt = item.name;
+                relatedImage.className = 'related-image';
+
+                const relatedName = document.createElement('h4');
+                relatedName.textContent = item.name;
+
+                const relatedPrice = document.createElement('h3');
+                relatedPrice.textContent = `${item.price}`;
+
+                relatedDiv.appendChild(relatedImage);
+                relatedDiv.appendChild(relatedName);
+                relatedDiv.appendChild(relatedPrice);
+
+                // Add click event to open selected product's details
+                relatedImage.addEventListener('click', () => {
+                    localStorage.setItem('productDetails', JSON.stringify(item));
+                    window.location.reload();
+                });
+
+                relatedContainer.appendChild(relatedDiv);
+            });
+        }
+
+        // Fetch related products
+        fetchRelatedProducts();
+    </script>
+</body>
+</html>

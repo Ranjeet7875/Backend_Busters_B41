@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        /* banner */
+        #banner {
+        }
+        #banner>img{
+           width: 100%;
+        }
+        /*start about-page*/
+        #about-page{
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        #about-para-1>h2{
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 3.2rem;
+            font-family: Neue-Plak-Wide-Bold, sans-serif, -apple-system;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        #about-para-1 p{
+            margin-top: 20px;
+            font-size: 15px;
+        }
+        
+        #about-para{
+            display: flex;
+            justify-content: space-between;
+        }
+        #about-item{
+            font-weight: 550;
+            margin-top: 50px;
+        }
+
+        /*start men-category*/
+        #men-category {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px; 
+            margin-top: 20px;
+            margin-left: 100px;
+        }
+        #men-category>div{
+
+            width: 150px;
+            height: 150px;
+        }   
+        #men-category>div>img{
+            width: 100%;
+        }
+        
+        /*filter-div*/
+        #filter{
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        #dot-refine{
+            display: flex;
+            gap:20px
+        }
+        #view{
+            padding-left: 15px;
+            font-size: 15px;
+        }
+        #three-dot>i{
+
+            font-size: 20px;
+            font-weight: 900;
+            background: transparent;
+        }
+        #three-dot-1{
+            font-size: 20px;
+        }
+        #refine-btn{
+            padding: 5px 20px;
+            font-size: 20px;
+            background-color: transparent;
+            font-weight: 500;
+        }
+        #refine-btn:hover{
+            background-color: #121111;
+            color: #ffffff;
+        }
+        #refine-btn>span{
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        #men-container {
+            margin-left: 100px;
+            margin-right: 100px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px; /* Increase gap for better spacing */
+            margin-top: 20px; /* Add margin to separate from other content */
+            margin-bottom: 20px;
+        }
+
+        .men-div {
+            position: relative;  /* Add this */
+            height: 380px;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .men-div:hover{
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        }
+
+        .item-image {
+            height: 70%;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .men-div h4 {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+
+        .men-div h3 {
+            position: absolute; 
+            top: 68%;           
+            left: 15%;         
+            transform: translate(-50%, -50%); 
+            font-size: 20px;
+            color: #007BFF;
+            margin: 5px 0;     
+            transition: opacity 0.3s ease;  
+            background: rgba(255, 255, 255, 0.9); 
+            border-radius: 5px;  
+        }
+
+        .item-image {
+            height: 70%;
+            width: 100%;
+            transition: transform 0.3s ease; 
+        }
+
+        .men-div:hover .item-image {
+            transform: scale(1.05);  
+        }
+
+        .men-div p {
+            font-size: 14px;
+            color: #777;
+            padding-left: 10px;
+        }
+        .wishlist-icon {
+            position: absolute;
+            top: 10px;  
+            right: 10px;  
+            font-size: 25px;
+            color: #121111;  
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            background: transparent;
+        }
+
+        .wishlist-icon:hover {
+            color: #ff6347;
+        }   
+
+        /* Media queries */
+        @media (max-width: 768px) {
+            #about-page, #men-category, #filter, #men-container {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            #men-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            #men-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <img src="https://www.reebok.eu/BWStaticContent/153000/d880e658-fe49-411c-93ce-a5a1d2b891aa_desk-sonic.jpg" alt="">
+    </div>
+    <div id="about-page">
+        <div id="home-page"><a href="">Kid's/ Women's</a></div>
+
+    </div>
+    <div id="men-category">
+        <div id="shoes" class="category">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/9dc93be1-3963-473f-9f76-6bf1e8ec21f2_23ss-women-wf-iwp-tile-shoes-mb.jpg" alt="shoes">
+            <h3>Shoes</h3>
+        </div>
+        <div id="clothing" class="category">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/add9c590-94de-4fca-b198-3ac296597dc2_23ss-women-wf-iwp-tile-apparel-mb.jpg" alt="clothing">
+            <h3>Clothing</h3>
+        </div>
+    </div>
+    <div id="empty-div"></div>  
+
+    <div id="filter">
+        <button id="refine-btn">Refine <span><i class="fa-solid fa-sliders"></i></span></button>
+        <div id="dot-refine">
+            <p id="view">View</p>
+            <p id="three-dot"><i class="fa-solid fa-ellipsis"></i></p>
+            <p id="three-dot-1"><i class="fa-solid fa-ellipsis"></i></p>
+        </div>
+    </div>
+
+    <div id="men-container"></div>
+
+    <script>
+async function fetchMen(category = '') {
+    try {
+        const res = await fetch('https://reebokclone-5f711-default-rtdb.firebaseio.com/kids_Cat.json');
+        let data = await res.json();
+
+        // Filter data based on category if provided
+        if (category) {
+            data = data.filter(item => item.category.toLowerCase() === category.toLowerCase());
+        }
+
+        displayData(data);
+    } catch (err) {
+        console.error("Error fetching data:", err);
+    }
+}
+
+const menContainer = document.getElementById('men-container');
+
+function displayData(data) {
+    menContainer.textContent = ""; // Clear previous content
+    data.forEach(item => menContainer.appendChild(createCard(item)));
+}
+
+function createCard(item) {
+    const div = document.createElement('div');
+    div.className = "men-div";
+
+    const image = document.createElement("img");
+    image.src = item.image_url || 'https://via.placeholder.com/150'; // Replace with a valid fallback image URL
+    image.alt = item.name;
+    image.classList.add('item-image');
+    image.addEventListener('click',()=>{
+        openProductDetails(item)
+    })
+
+    const name = document.createElement('h4');
+    name.textContent = item.name;
+
+    const rate = document.createElement('h3');
+    rate.textContent = `${item.price}`; // Assuming price is in Indian Rupees (use the correct symbol for your currency)
+
+    const category = document.createElement('p');
+    category.textContent = "Multiple Colours Available";
+
+    const wishlistIcon = document.createElement('span');
+    wishlistIcon.className = "wishlist-icon";
+    wishlistIcon.innerHTML = "&#9825;";
+    wishlistIcon.addEventListener('click',()=>{
+        const added=addWishList(item)
+        if(added){
+            alert('Item added to wishlist!')
+
+        }else{
+            alert('Item allready added to wishlist!')
+        }
+    })
+
+    div.appendChild(image);
+    div.appendChild(rate);
+    div.appendChild(name);
+    div.appendChild(category);
+    div.appendChild(wishlistIcon);
+
+    return div;
+}
+
+// Event listeners for category buttons
+const shoesBtn = document.getElementById('shoes');
+if (shoesBtn) shoesBtn.addEventListener('click', () => fetchMen("Kids' Shoes"));
+
+const clothingBtn = document.getElementById('clothing');
+if (clothingBtn) clothingBtn.addEventListener('click', () => fetchMen("Kids' Clothing"));
+
+function openProductDetails(item){
+    localStorage.setItem('productDetail',JSON.stringify(item))
+    window.location.href='kid_product_details.html'
+}
+
+function addWishList(item) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const exists = wishlist.some(wishlistItem => wishlistItem.name === item.name);
+    if (!exists) {
+        wishlist.push(item);
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        return true; // Indicate that the item was added
+    }
+    return false; // Indicate that the item already exists
+}
+// Initial fetch
+fetchMen();
+    </script>
+</body>
+</html>
