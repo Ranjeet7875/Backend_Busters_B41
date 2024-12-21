@@ -348,7 +348,7 @@
             alert(`Payment Successful!\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDelivery Address: ${address}, ${city}, ${state} - ${zipcode}\nPayment Method: ${paymentMethod}\nPayment Details: ${paymentDetails}`);
             alert('payement sucessful')
             
-            // Clear localStorage and update button text
+            
             localStorage.removeItem('wishlist'); // Clear the wishlist
             localStorage.removeItem('totalAmount'); // Remove the stored total amount
             document.getElementById('checkout-button').textContent = "Purchase Complete";
@@ -356,7 +356,7 @@
             document.getElementById('checkout-button').disabled = true;
         }
 
-        // Load the total amount on page load
+        
         loadTotalAmount();
     </script>
 </body>
