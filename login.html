@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adidas Login-Signup</title>
+  <style>
+    body{
+        padding: 0;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #fff;
+
+        background: linear-gradient(to right, #3a6186, #89253e);
+
+    }
+    .grand {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+
+    }
+    .container {
+      width: 350px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    .button {
+      display: block;
+      width: 100%;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .button:hover {
+      background: #444;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+    input::placeholder {
+      color: #ccc;
+    }
+    a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-size: 14px;
+      text-align: center;
+      display: block;
+      margin-top: 10px;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #footer{
+        margin-top: -90px;
+        height: 120px;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+  </style>
+</head>
+<body>
+    <div class="grand">
+  <div class="container">
+    <h1>Reebok</h1>
+    <div id="signup-form">
+      <h2>Sign Up</h2>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+      </div>
+      <button class="button" onclick="signup()">Sign Up</button>
+      <a href="#" onclick="showLoginForm()">Already have an account? Log In</a>
+    </div>
+
+    <div id="login-form" style="display: none;">
+      <h2>Log In</h2>
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="Enter your password" required />
+      </div>
+      <button class="button" onclick="login()">Log In</button>
+      <a href="#" onclick="showSignupForm()">Don't have an account? Sign Up</a>
+    </div>
+    
+  </div>
+  </div>
+
+  <div id="footer"><h1>Join The Reebok Club + Get 20% Discount</h1></div>
+  
+
+
+  
+  
+
+  <script>
+    // Show login form
+    function showLoginForm() {
+      document.getElementById('signup-form').style.display = 'none';
+      document.getElementById('login-form').style.display = 'block';
+    }
+
+    // Show signup form
+    function showSignupForm() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('signup-form').style.display = 'block';
+    }
+
+    // Sign up function
+    function signup() {
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (username && email && password) {
+        const userData = {
+          username,
+          email,
+          password
+        };
+        localStorage.setItem('user', JSON.stringify(userData));
+        alert('Signup successful! Redirecting to login page...');
+        showLoginForm();
+      } else {
+        alert('Please fill out all fields.');
+      }
+    }
+
+    // Login function
+    function login() {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      const storedUser = JSON.parse(localStorage.getItem('user'));
+
+      if (storedUser && storedUser.email === email && storedUser.password === password) {
+        alert('Login successful! Redirecting to dashboard...');
+        window.location.href = 'index.html'; // Replace with your dashboard URL
+      } else {
+        alert('Invalid email or password. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>
