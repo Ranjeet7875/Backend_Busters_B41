@@ -2,8 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Women's Collection</title>
+    <title>Sports Collection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
     <style>
         *{
             margin: 0%;
@@ -24,8 +25,8 @@
         }
         #about-para-1>h2{
             margin-top: 20px;
-            font-weight: 700;
-        font-size: 3.2rem;
+            font-weight: 600;
+        font-size: 2.7rem;
         font-family: Neue-Plak-Wide-Bold, sans-serif, -apple-system;
         font-style: normal;
         font-stretch: normal;
@@ -43,7 +44,7 @@
             justify-content: space-between;
         }
         #about-item{
-            font-weight: 550;
+            
             margin-top: 50px;
         }
 
@@ -94,9 +95,10 @@
         }
         #refine-btn{
             padding: 5px 20px;
-            font-size: 20px;
+            font-size: 18px;
             background-color: transparent;
             font-weight: 500;
+            border: 1px solid;
             
         }
         #refine-btn:hover{
@@ -121,14 +123,15 @@
         position: relative;  /* Add this */
         height: 380px;
         background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-        border-radius: 10px;
+        
+        margin-bottom: 10px;
+        margin-left: 10px;
         overflow: hidden;
         text-align: left;
         transition: all 0.3s ease;
         }
         .men-div:hover{
-            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
         }
 
         .item-image {
@@ -150,8 +153,10 @@
         top: 68%;           
         left: 15%;         
         transform: translate(-50%, -50%); 
-        font-size: 20px;
-        color: #007BFF;
+        font-size: 16px;
+        font-weight: lighter;
+        
+        color: black;
         margin: 5px 0;     
         transition: opacity 0.3s ease;  
         background: rgba(255, 255, 255, 0.9); 
@@ -191,6 +196,19 @@
     .wishlist-icon:hover {
         color: #ff6347;
     }
+    #home-page a{
+    
+     text-decoration: none;
+     color: black;
+     
+    }
+    #about-page{
+        margin-top: 5px;
+    }
+    .home{
+        color: grey;
+        text-decoration: underline;
+    }
     /* Media queries */
     @media (max-width: 768px) {
             #about-page, #men-category, #filter, #men-container {
@@ -223,28 +241,92 @@
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Hamburger Menu -->
+            <div class="hamburger-lines" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="../images/logo/Reebok-logo-01.png" alt="Reebok Logo">
+            </div>
+
+            <!-- Menu Items -->
+            <ul class="menu-items">
+                <a class="list-items" href="../productCate/women.html">
+                    <li class="bold">Women</li>
+                </a>
+                <a class="list-items" href="../reebo/men_Cate.html">
+                    <li class="bold">Men</li>
+                </a>
+                <a class="list-items" href="../reebo/kids.html">
+                    <li class="bold">Kids</li>
+                </a>
+                <a class="list-items" href="../reebo/classics.html">
+                    <li>Classics</li>
+                </a>
+                <a class="list-items" href="../reebo/sports.html">
+                    <li>Sports</li>
+                </a>
+                <a class="list-items" href="../reebokLTD/reebokltd.html">
+                    <li class="bold">Reebok Ltd</li>
+                </a> 
+                <a class="list-items" href="../stories/stories.html">
+                    <li>Stories</li>
+                </a>
+            </ul>
+
+            <!-- Icons -->
+            <div class="icons">
+                <img src="https://cdn-icons-png.flaticon.com/512/751/751463.png" alt="Search Icon">
+                <a href="../login.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="User Icon">
+                </a>
+                <a href="../productCate/wishlist.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="Heart Icon">
+                </a>
+                <a href="../checkout.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Cart Icon">
+                </a>
+            </div>
+    </nav>
+
+
+    <section id="join_club">
+        <div class="offer">
+            <p>Get 20% Off</p>
+        </div>
+        <div class="reebok_club">
+            <a href="#">JOIN THE REEBOK CLUB</a>
+        </div>
+    </section>
+
     <div id="about-page">
-        <div id="home-page"><a href="">Home/ Women's</a></div>
+        <div id="home-page"><a href="../index.html"><span class="home">Home</span> / Sport</a></div>
         <div id="about-para">
             <div id="about-para-1">
-                <h2>WOMEN'S SHOES, CLOTHES & <br> ACCESSORIES</h2>
-                <p>Welcome to Reebok Women’s. Our selection of women’s clothing, accessories and trainers is ready for your every workout or chillout. You’ll find <br> everything from our <underline>classic shoes</underline> to our latest drops here.</p>
-
+                <h2>Reebok Official UK</h2>
+                <p>Reebok’s comprehensive range of performance-based <u>workout gear</u>  and <u>sports shoes</u>  is ideal whatever your sport of choice is. Everything from our <u>classic</u> range to the latest models can be found here in a range of materials and colours - including classic white and black</p>
             </div>
             <div id="about-item">[1544 items]</div>
         </div>
 
     </div>
     <div id="men-category">
-        <div id="shoes" class="category">
+        <div id="shoes" class="categories">
             <img src="https://www.reebok.eu/BWStaticContent/153000/9dc93be1-3963-473f-9f76-6bf1e8ec21f2_23ss-women-wf-iwp-tile-shoes-mb.jpg" alt="shoes">
             <h3>Shoes</h3>
         </div>
-        <div id="clothing" class="category">
+        <div id="clothing" class="categories">
             <img src="https://www.reebok.eu/BWStaticContent/153000/add9c590-94de-4fca-b198-3ac296597dc2_23ss-women-wf-iwp-tile-apparel-mb.jpg" alt="clothing">
             <h3>Clothing</h3>
         </div>
-        <div id="accessories" class="category">
+        <div id="accessories" class="categories">
             <img src="https://www.reebok.eu/BWStaticContent/153000/a1e672f5-75a6-458c-96ef-7809cbda5034_23ss-women-fd-iwp-tile-acc-mb.jpg" alt="accessories">
             <h3>Accessories</h3>
         </div>
@@ -353,7 +435,7 @@ function openProductDetails(item) {
             // Store product details in localStorage
             localStorage.setItem('productDetails', JSON.stringify(item));
             // open a product deatils page
-            window.location.href = 'product-details.html';
+            window.location.href = 'women_product-details.html';
         }
 
 // Initial fetch
@@ -363,3 +445,4 @@ fetchMen();
     </script>
 </body>
 </html>
+<script src="/app.js"></script>

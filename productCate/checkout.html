@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -115,6 +116,73 @@
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Hamburger Menu -->
+            <div class="hamburger-lines" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="../images/logo/Reebok-logo-01.png" alt="Reebok Logo">
+            </div>
+
+            <!-- Menu Items -->
+            <ul class="menu-items">
+                <a class="list-items" href="../productCate/women.html">
+                    <li class="bold">Women</li>
+                </a>
+                <a class="list-items" href="./reebo/men_Cate.html">
+                    <li class="bold">Men</li>
+                </a>
+                <a class="list-items" href="./reebo/kids.html">
+                    <li class="bold">Kids</li>
+                </a>
+                <a class="list-items" href="../reebo/classics.html">
+                    <li>Classics</li>
+                </a>
+                <a class="list-items" href="../reebo/sports.html">
+                    <li>Sports</li>
+                </a>
+                <a class="list-items" href="./reebokLTD/reebokltd.html">
+                    <li class="bold">Reebok Ltd</li>
+                </a> 
+                <a class="list-items" href="stories/stories.html">
+                    <li>Stories</li>
+                </a>
+            </ul>
+
+            <!-- Icons -->
+            <div class="icons">
+                <img src="https://cdn-icons-png.flaticon.com/512/751/751463.png" alt="Search Icon">
+                <a href="../login.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="User Icon">
+                </a>
+                <a href="../productCate/wishlist.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="Heart Icon">
+                </a>
+                <a href="../checkout.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Cart Icon">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="join_club">
+        <div class="offer">
+            <p>Get 20% Off</p>
+        </div>
+        <div class="reebok_club">
+            <a href="#">JOIN THE REEBOK CLUB</a>
+        </div>
+    </section>
+
+
     <div class="checkout-header">
         <h1>Checkout</h1>
     </div>
@@ -166,6 +234,65 @@
         <button id="checkout-button" onclick="completeCheckout()">Complete Checkout</button>
     </div>
 
+        <!-- Footer Section -->
+        <div class="red-banner">
+            <h1>JOIN THE REEBOK CLUB + GET <br> 20% OFF</h1>
+            <button>Join the Club</button>
+        </div>
+    
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer">
+                <!-- Support Section -->
+                <div>
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Track your order</a></li>
+                        <li><a href="#">Return your order</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Legal Section -->
+                <div>
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Cookie Preferences</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Country/Currency Section -->
+                <div>
+                    <h4>COUNTRY/CURRENCY</h4>
+                    <p>United Kingdom / £ <a href="#" style="text-decoration: underline;">Change</a></p>
+                    <h4 class="payment-methods">PAYMENT METHODS</h4>
+                    <div id="payment-methods">
+                        <img class="payment-card" src="../payment_card_img/amex-svgrepo-com.svg" alt="america-express">
+                        <img class="payment-card" src="../payment_card_img/dinersclub.png" alt="dinersclub">
+                        <img class="payment-card" src="../payment_card_img/jcb.webp" alt="jcb">
+                        <img class="payment-card" src="../payment_card_img/maestro-logo.png" alt="maestro">
+                        <img class="payment-card" src="../payment_card_img/mastercard-svgrepo-com.svg" alt="master card">
+                        <img class="payment-card" src="../payment_card_img/visa-svgrepo-com.svg" alt="VISA">
+    
+                        <br>
+                        
+                        <img class="premium-cards" src="../payment_card_img/icons8-apple-pay.svg" alt="">
+                        <img class="premium-cards Paypal" src="../payment_card_img/paypal-logo-svgrepo-com (1).svg" alt="">
+                        <img class="premium-cards" src="../payment_card_img/klarna-logo-svgrepo-com.svg" alt="">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Bottom Bar -->
+            <div class="bottom-bar">
+                Reebok™ is a trademark of Reebok International Limited. ©2023 Reebok International Limited. All Rights Reserved.
+            </div>
+        </footer>
+
+    
     <script>
         function loadTotalAmount() {
             let totalAmount = localStorage.getItem('totalAmount');
@@ -235,3 +362,4 @@
     </script>
 </body>
 </html>
+<script src="/app.js"></script>

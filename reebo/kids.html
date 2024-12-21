@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kids Collection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <link rel="stylesheet" href="../styles.css">
     <style>
         *{
-            margin: 0;
-            padding: 0;
+            margin: 0%;
+            padding: 0%;
             box-sizing: border-box;
         }
         body {
@@ -18,12 +20,6 @@
             background-color: #ffffff;
             overflow-x: hidden;
         }
-        /* banner */
-        #banner {
-        }
-        #banner>img{
-           width: 100%;
-        }
         /*start about-page*/
         #about-page{
             margin-left: 100px;
@@ -31,17 +27,18 @@
         }
         #about-para-1>h2{
             margin-top: 20px;
-            font-weight: 700;
-            font-size: 3.2rem;
-            font-family: Neue-Plak-Wide-Bold, sans-serif, -apple-system;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1;
-            text-transform: uppercase;
+            font-weight: 600;
+        font-size: 2.7rem;
+        font-family: Neue-Plak-Wide-Bold, sans-serif, -apple-system;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        text-transform: uppercase;
         }
         #about-para-1 p{
             margin-top: 20px;
             font-size: 15px;
+             
         }
         
         #about-para{
@@ -49,11 +46,18 @@
             justify-content: space-between;
         }
         #about-item{
-            font-weight: 550;
+            
             margin-top: 50px;
         }
+        #banner img{
+            position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
 
-        /*start men-category*/
+        }
+
+        /*satrt men-category*/
         #men-category {
             width: 100%;
             height: 100px;
@@ -87,6 +91,7 @@
         #view{
             padding-left: 15px;
             font-size: 15px;
+            
         }
         #three-dot>i{
 
@@ -99,9 +104,11 @@
         }
         #refine-btn{
             padding: 5px 20px;
-            font-size: 20px;
+            font-size: 18px;
             background-color: transparent;
             font-weight: 500;
+            border: 1px solid;
+            
         }
         #refine-btn:hover{
             background-color: #121111;
@@ -113,27 +120,27 @@
         }
 
         #men-container {
-            margin-left: 100px;
-            margin-right: 100px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px; /* Increase gap for better spacing */
-            margin-top: 20px; /* Add margin to separate from other content */
-            margin-bottom: 20px;
-        }
+        margin-left: 100px;
+        margin-right: 100px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px; /* Increase gap for better spacing */
+        margin-top: 20px; /* Add margin to separate from other content */
+}
 
         .men-div {
-            position: relative;  /* Add this */
-            height: 380px;
-            background-color: white;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: left;
-            transition: all 0.3s ease;
+        position: relative;  /* Add this */
+        height: 380px;
+        background-color: white;
+        
+        margin-bottom: 10px;
+        margin-left: 10px;
+        overflow: hidden;
+        text-align: left;
+        transition: all 0.3s ease;
         }
         .men-div:hover{
-            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+            box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
         }
 
         .item-image {
@@ -149,52 +156,70 @@
             padding-left: 10px;
         }
 
-        .men-div h3 {
-            position: absolute; 
-            top: 68%;           
-            left: 15%;         
-            transform: translate(-50%, -50%); 
-            font-size: 20px;
-            color: #007BFF;
-            margin: 5px 0;     
-            transition: opacity 0.3s ease;  
-            background: rgba(255, 255, 255, 0.9); 
-            border-radius: 5px;  
-        }
 
-        .item-image {
-            height: 70%;
-            width: 100%;
-            transition: transform 0.3s ease; 
-        }
+    .men-div h3 {
+        position: absolute; 
+        top: 68%;           
+        left: 15%;         
+        transform: translate(-50%, -50%); 
+        font-size: 16px;
+        font-weight: lighter;
+        
+        color: black;
+        margin: 5px 0;     
+        transition: opacity 0.3s ease;  
+        background: rgba(255, 255, 255, 0.9); 
+        border-radius: 5px;  
+    }
 
-        .men-div:hover .item-image {
-            transform: scale(1.05);  
-        }
 
-        .men-div p {
+
+.item-image {
+    height: 70%;
+    width: 100%;
+    transition: transform 0.3s ease; 
+}
+
+.men-div:hover .item-image {
+    transform: scale(1.05);  
+}
+
+
+  .men-div p {
             font-size: 14px;
             color: #777;
             padding-left: 10px;
-        }
-        .wishlist-icon {
-            position: absolute;
-            top: 10px;  
-            right: 10px;  
-            font-size: 25px;
-            color: #121111;  
-            cursor: pointer;
-            transition: color 0.3s ease;
-            font-weight: 500;
-            background: transparent;
-        }
+    }
+    .wishlist-icon {
+        position: absolute;
+        top: 10px;  
+        right: 10px;  
+        font-size: 25px;
+        color: #121111;  
+        cursor: pointer;
+        transition: color 0.3s ease;
+        font-weight: 500;
+        background: transparent;
+    }
 
-        .wishlist-icon:hover {
-            color: #ff6347;
-        }   
-
-        /* Media queries */
-        @media (max-width: 768px) {
+    .wishlist-icon:hover {
+        color: #ff6347;
+    }
+    #home-page a{
+    
+     text-decoration: none;
+     color: black;
+     
+    }
+    #about-page{
+        margin-top: 5px;
+    }
+    .home{
+        color: grey;
+        text-decoration: underline;
+    }
+    /* Media queries */
+    @media (max-width: 768px) {
             #about-page, #men-category, #filter, #men-container {
                 margin-left: 20px;
                 margin-right: 20px;
@@ -202,6 +227,18 @@
             #men-container {
                 grid-template-columns: repeat(2, 1fr);
             }
+            #about-para-1>h2{
+                margin-top: 20px;
+                font-weight: 700;
+                font-size: 2.2rem;
+                font-family: Neue-Plak-Wide-Bold, sans-serif, -apple-system;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1;
+                text-transform: uppercase;
+
+            }
+
         }
 
         @media (max-width: 480px) {
@@ -209,9 +246,76 @@
                 grid-template-columns: repeat(1, 1fr);
             }
         }
+
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Hamburger Menu -->
+            <div class="hamburger-lines" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="../images/logo/Reebok-logo-01.png" alt="Reebok Logo">
+            </div>
+
+            <!-- Menu Items -->
+            <ul class="menu-items">
+                <a class="list-items" href="../productCate/women.html">
+                    <li class="bold">Women</li>
+                </a>
+                <a class="list-items" href="../reebo/men_Cate.html">
+                    <li class="bold">Men</li>
+                </a>
+                <a class="list-items" href="../reebo/kids.html">
+                    <li class="bold">Kids</li>
+                </a>
+                <a class="list-items" href="../reebo/classics.html">
+                    <li>Classics</li>
+                </a>
+                <a class="list-items" href="../reebo/sports.html">
+                    <li>Sports</li>
+                </a>
+                <a class="list-items" href="../reebokLTD/reebokltd.html">
+                    <li class="bold">Reebok Ltd</li>
+                </a> 
+                <a class="list-items" href="../stories/stories.html">
+                    <li>Stories</li>
+                </a>
+            </ul>
+
+            <!-- Icons -->
+            <div class="icons">
+                <img src="https://cdn-icons-png.flaticon.com/512/751/751463.png" alt="Search Icon">
+                <a href="../login.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="User Icon">
+                </a>
+                <a href="../productCate/wishlist.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="Heart Icon">
+                </a>
+                <a href="../checkout.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Cart Icon">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="join_club">
+        <div class="offer">
+            <p>Get 20% Off</p>
+        </div>
+        <div class="reebok_club">
+            <a href="#">JOIN THE REEBOK CLUB</a>
+        </div>
+    </section>
+
     <div id="banner">
         <img src="https://www.reebok.eu/BWStaticContent/153000/d880e658-fe49-411c-93ce-a5a1d2b891aa_desk-sonic.jpg" alt="">
     </div>
@@ -220,11 +324,11 @@
 
     </div>
     <div id="men-category">
-        <div id="shoes" class="category">
+        <div id="shoes" class="categories">
             <img src="https://www.reebok.eu/BWStaticContent/153000/9dc93be1-3963-473f-9f76-6bf1e8ec21f2_23ss-women-wf-iwp-tile-shoes-mb.jpg" alt="shoes">
             <h3>Shoes</h3>
         </div>
-        <div id="clothing" class="category">
+        <div id="clothing" class="categories">
             <img src="https://www.reebok.eu/BWStaticContent/153000/add9c590-94de-4fca-b198-3ac296597dc2_23ss-women-wf-iwp-tile-apparel-mb.jpg" alt="clothing">
             <h3>Clothing</h3>
         </div>
@@ -240,7 +344,68 @@
         </div>
     </div>
 
+    
+
     <div id="men-container"></div>
+
+    <div class="red-banner">
+        <h1>JOIN THE REEBOK CLUB + GET <br> 20% OFF</h1>
+        <button>Join the Club</button>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer">
+            <!-- Support Section -->
+            <div>
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Track your order</a></li>
+                    <li><a href="#">Return your order</a></li>
+                </ul>
+            </div>
+    
+            <!-- Legal Section -->
+            <div>
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                </ul>
+            </div>
+    
+            <!-- Country/Currency Section -->
+            <div>
+                <h4>COUNTRY/CURRENCY</h4>
+                <p>United Kingdom / £ <a href="#" style="text-decoration: underline;">Change</a></p>
+                <h4 class="payment-methods">PAYMENT METHODS</h4>
+                <div id="payment-methods">
+                    <img class="payment-card" src="../payment_card_img/amex-svgrepo-com.svg" alt="america-express">
+                    <img class="payment-card" src="../payment_card_img/dinersclub.png" alt="dinersclub">
+                    <img class="payment-card" src="../payment_card_img/jcb.webp" alt="jcb">
+                    <img class="payment-card" src="../payment_card_img/maestro-logo.png" alt="maestro">
+                    <img class="payment-card" src="../payment_card_img/mastercard-svgrepo-com.svg" alt="master card">
+                    <img class="payment-card" src="../payment_card_img/visa-svgrepo-com.svg" alt="VISA">
+    
+                    <br>
+                    
+                    <img class="premium-cards" src="../payment_card_img/icons8-apple-pay.svg" alt="">
+                    <img class="premium-cards Paypal" src="../payment_card_img/paypal-logo-svgrepo-com (1).svg" alt="">
+                    <img class="premium-cards" src="../payment_card_img/klarna-logo-svgrepo-com.svg" alt="">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+            Reebok™ is a trademark of Reebok International Limited. ©2023 Reebok International Limited. All Rights Reserved.
+        </div>
+    </footer>
+
+    
 
     <script>
 async function fetchMen(category = '') {
@@ -316,3 +481,4 @@ fetchMen();
     </script>
 </body>
 </html>
+<script src="/app.js"></script>
