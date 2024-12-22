@@ -28,6 +28,10 @@ body {
     align-items: center;
     padding: 10px 20px;
 }
+.item a{
+    text-decoration: none;
+    font-weight: 800;
+}
 
 .list-items{
     text-decoration: none;

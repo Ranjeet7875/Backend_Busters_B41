@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./product-detail img/product-detail9.webp"
+    />
+
+    <link rel="stylesheet" href="../styles.css">
+
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js" defer></script>
+    <script src="slider.js" defer></script>
+    <script src="cart.js" defer></script>
+  </head>
+  <body>
+
+
+    <nav class="navbar">
+      <div class="navbar-container">
+          <!-- Hamburger Menu -->
+          <div class="hamburger-lines" onclick="toggleMenu()">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+          </div>
+
+          <!-- Logo -->
+          <div class="logo">
+              <img src="../images/logo/Reebok-logo-01.png" alt="Reebok Logo">
+          </div>
+
+          <!-- Menu Items -->
+          <ul class="menu-items">
+            <a class="list-items" href="../index.html">
+              <li class="bold">Home</li>
+          </a>
+              <a class="list-items" href="../reebo/women.html">
+                  <li class="bold">Women</li>
+              </a>
+              <a class="list-items" href="../reebo/men_Cate.html">
+                  <li class="bold">Men</li>
+              </a>
+              <a class="list-items" href="../reebo/kids.html">
+                  <li class="bold">Kids</li>
+              </a>
+              <a class="list-items" href="../reebo/classics.html">
+                  <li>Classics</li>
+              </a>
+              <a class="list-items" href="../reebo/sports.html">
+                  <li>Sports</li>
+              </a>
+              <a class="list-items" href="../reebokLTD/reebokltd.html">
+                  <li class="bold">Reebok Ltd</li>
+              </a> 
+              <a class="list-items" href="../stories/stories.html">
+                  <li>Stories</li>
+              </a>
+          </ul>
+
+          <!-- Icons -->
+          <div class="icons">
+              <img src="https://cdn-icons-png.flaticon.com/512/751/751463.png" alt="Search Icon">
+              <a href="../login.html">
+                  <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="User Icon">
+              </a>
+              <a href="../reebo/wishlist.html">
+                  <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="Heart Icon">
+              </a>
+              <a href="../checkout.html">
+                  <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="Cart Icon">
+              </a>
+          </div>
+      </div>
+  </nav>
+    
+
+
+      <section class="main">
+        <div class="default gallery">
+          <div class="main-img">
+            <img
+              class="active"
+              src="./product-detail img/product-detail9.webp"
+              alt="product-img"
+            />
+            <img src="./product-detail img/product-detail9.1.webp" alt="product-img" />
+            <img src="./product-detail img/product-detail9.2.webp" alt="product-img" />
+            <img src="./product-detail img/product-detail9.3.webp" alt="product-img" />
+          </div>
+          <div class="thumb-list">
+            <div class="active">
+              <img
+                src="./product-detail img/product-detail9.webp"
+                alt="product-img"
+              />
+            </div>
+            <div>
+              <img
+                src="./product-detail img/product-detail9.1.webp"
+                alt="product-img"
+              />
+            </div>
+            <div>
+              <img
+                src="./product-detail img/product-detail9.2.webp"
+                alt="product-img"
+              />
+            </div>
+            <div>
+              <img
+                src="./product-detail img/product-detail9.3.webp"
+                alt="product-img"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="lightbox">
+          <div class="gallery">
+            <div class="main-img">
+              <!-- icons -->
+              <span class="icon-close">
+                <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                    fill="#69707D"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span class="icon-prev">
+                <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 1 3 9l8 8"
+                    stroke="#1D2026"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span class="icon-next">
+                <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m2 1 8 8-8 8"
+                    stroke="#1D2026"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+
+              <!-- main images -->
+              <img
+                class="active"
+                src="./product-detail img/product-detail9.webp"
+                alt="product-img"
+              />
+              <img src="./product-detail img/product-detail9.1.webp" alt="product-img" />
+              <img src="./product-detail img/product-detail9.2.webp" alt="product-img" />
+              <img src="./product-detail img/product-detail9.3.webp" alt="product-img" />
+            </div>
+            <div class="thumb-list">
+              <div class="active">
+                <img
+                  src="./product-detail img/product-detail9.webp"
+                  alt="product-img"
+                />
+              </div>
+              <div>
+                <img
+                  src="./product-detail img/product-detail9.1.webp"
+                  alt="product-img"
+                />
+              </div>
+              <div>
+                <img
+                  src="./product-detail img/product-detail9.2.webp"
+                  alt="product-img"
+                />
+              </div>
+              <div>
+                <img
+                  src="./product-detail img/product-detail9.3.webp"
+                  alt="product-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <h3>Men's Running Shoes</h3>
+          <h2 class="product-name">Men's Running Shoes</h2>
+          <p class="product-desc">
+            Make 3 payments of £40.00. Klarna. <u>Learn more</u>
+
+            18+, T&C apply, Credit subject to status.
+            
+            <br>
+            <br>
+            <br>
+            <b>Colour (16):</b>Vector Navy/Escape Blue/Supercharged Coral
+          </p>
+          <div class="price-info">
+            <div class="price">
+              <span class="current-price">£120</span>
+              <span class="discount">30%</span>
+            </div>
+            <div class="prev-price">£170</div>
+          </div>
+          <div class="add-to-cart-container">
+            <div class="counter">
+              <button class="minus">
+                <svg
+                  width="12"
+                  height="4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <path
+                      d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                      id="a"
+                    />
+                  </defs>
+                  <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
+                </svg>
+              </button>
+              <span class="count">0</span>
+              <button class="plus">
+                <svg
+                  width="12"
+                  height="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <path
+                      d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                      id="b"
+                    />
+                  </defs>
+                  <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
+                </svg>
+              </button>
+            </div>
+            <button class="add-to-cart">
+              <span>
+                <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                    fill="#69707D"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+              </span>
+              <span>Add to cart</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="red-banner">
+      <h1>JOIN THE REEBOK CLUB + GET <br> 20% OFF</h1>
+      <button>Join the Club</button>
+  </div>
+  
+  <!-- Footer Section -->
+  <footer>
+      <div class="footer">
+          <!-- Support Section -->
+          <div>
+              <h4>SUPPORT</h4>
+              <ul>
+                  <li><a href="#">Help</a></li>
+                  <li><a href="#">Track your order</a></li>
+                  <li><a href="#">Return your order</a></li>
+              </ul>
+          </div>
+  
+          <!-- Legal Section -->
+          <div>
+              <h4>LEGAL</h4>
+              <ul>
+                  <li><a href="#">Terms & Conditions</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Cookie Policy</a></li>
+                  <li><a href="#">Cookie Preferences</a></li>
+              </ul>
+          </div>
+  
+          <!-- Country/Currency Section -->
+          <div>
+              <h4>COUNTRY/CURRENCY</h4>
+              <p>United Kingdom / £ <a href="#" style="text-decoration: underline;">Change</a></p>
+              <h4 class="payment-methods">PAYMENT METHODS</h4>
+              <div id="payment-methods">
+                  <img class="payment-card" src="../payment_card_img/amex-svgrepo-com.svg" alt="america-express">
+                  <img class="payment-card" src="../payment_card_img/dinersclub.png" alt="dinersclub">
+                  <img class="payment-card" src="../payment_card_img/jcb.webp" alt="jcb">
+                  <img class="payment-card" src="../payment_card_img/maestro-logo.png" alt="maestro">
+                  <img class="payment-card" src="../payment_card_img/mastercard-svgrepo-com.svg" alt="master card">
+                  <img class="payment-card" src="../payment_card_img/visa-svgrepo-com.svg" alt="VISA">
+  
+                  <br>
+                  
+                  <img class="premium-cards" src="../payment_card_img/icons8-apple-pay.svg" alt="">
+                  <img class="premium-cards Paypal" src="../payment_card_img/paypal-logo-svgrepo-com (1).svg" alt="">
+                  <img class="premium-cards" src="../payment_card_img/klarna-logo-svgrepo-com.svg" alt="">
+              </div>
+          </div>
+      </div>
+  
+      <!-- Bottom Bar -->
+      <div class="bottom-bar">
+          Reebok™ is a trademark of Reebok International Limited. ©2023 Reebok International Limited. All Rights Reserved.
+      </div>
+  </footer>
+  <script src="app.js"> </script>
+  </body>
+</html>
