@@ -1,8 +1,8 @@
-    <html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Collection</title>
+    <title>Women's Collection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
     <style>
@@ -258,19 +258,22 @@
 
             <!-- Menu Items -->
             <ul class="menu-items">
-                <a class="list-items" href="../productCate/women.html">
+                <a class="list-items" href="../index.html">
+                    <li class="bold">Home</li>
+                </a>
+                <a class="list-items" href="./women.html">
                     <li class="bold">Women</li>
                 </a>
-                <a class="list-items" href="../reebo/men_Cate.html">
+                <a class="list-items" href="./men_Cate.html">
                     <li class="bold">Men</li>
                 </a>
-                <a class="list-items" href="../reebo/kids.html">
+                <a class="list-items" href="./kids.html">
                     <li class="bold">Kids</li>
                 </a>
-                <a class="list-items" href="../reebo/classics.html">
+                <a class="list-items" href="./classics.html">
                     <li>Classics</li>
                 </a>
-                <a class="list-items" href="../reebo/sports.html">
+                <a class="list-items" href="./sports.html">
                     <li>Sports</li>
                 </a>
                 <a class="list-items" href="../reebokLTD/reebokltd.html">
@@ -287,7 +290,7 @@
                 <a href="../login.html">
                     <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="User Icon">
                 </a>
-                <a href="../productCate/wishlist.html">
+                <a href="../reebo/wishlist.html">
                     <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png" alt="Heart Icon">
                 </a>
                 <a href="../checkout.html">
@@ -308,11 +311,11 @@
     </section>
 
     <div id="about-page">
-        <div id="home-page"><a href="../index.html"><span class="home">Home</span> / Men</a></div>
+        <div id="home-page"><a href="../index.html"><span class="home">Home</span> / Women's</a></div>
         <div id="about-para">
             <div id="about-para-1">
-                <h2>MEN'S SHOES, CLOTHING & <br> ACCESSORIES</h2>
-                <p>Welcome to Reebok Men’s. Our selection of men’s clothing, accessories and trainers is ready for your every workout or chillout. You’ll find  everything from <br> classic shoes to our latest drops here.</p>
+                <h2>WOMEN'S SHOES, CLOTHES & ACCESSORIES</h2>
+                <p>Welcome to Reebok Women’s. Our selection of women’s  <u>clothing</u>, <u>accessories</u> and <u>trainers</u> is ready for your every workout or chillout. You’ll find <br> everything from our <u>classic shoes</u> to our <u>latest drops</u> here.</p>
 
             </div>
             <div id="about-item">[1544 items]</div>
@@ -321,15 +324,15 @@
     </div>
     <div id="men-category">
         <div id="shoes" class="categories">
-            <img src="https://www.reebok.eu/BWStaticContent/153000/a798e7d3-29a4-46bf-979a-3564d89d8167_23ss-men-fd-iwp-tile-shoes-dt.jpg" alt="shoes">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/9dc93be1-3963-473f-9f76-6bf1e8ec21f2_23ss-women-wf-iwp-tile-shoes-mb.jpg" alt="shoes">
             <h3>Shoes</h3>
         </div>
         <div id="clothing" class="categories">
-            <img src="https://www.reebok.eu/BWStaticContent/153000/a1d018f3-69aa-490b-8fd9-0e426c4dfc31_23ss-men-fd-iwp-tile-apparel-dt.jpg" alt="clothing">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/add9c590-94de-4fca-b198-3ac296597dc2_23ss-women-wf-iwp-tile-apparel-mb.jpg" alt="clothing">
             <h3>Clothing</h3>
         </div>
         <div id="accessories" class="categories">
-            <img src="https://www.reebok.eu/BWStaticContent/153000/c8a0a775-86c6-4b71-a71b-4f8c6b3b31ff_23ss-men-fd-iwp-tile-acc-dt.jpg" alt="accessories">
+            <img src="https://www.reebok.eu/BWStaticContent/153000/a1e672f5-75a6-458c-96ef-7809cbda5034_23ss-women-fd-iwp-tile-acc-mb.jpg" alt="accessories">
             <h3>Accessories</h3>
         </div>
     </div>
@@ -347,6 +350,7 @@
 
 
     <div id="men-container"></div>
+
     <!---->
     <div class="red-banner">
         <h1>JOIN THE REEBOK CLUB + GET <br> 20% OFF</h1>
@@ -405,12 +409,10 @@
         </div>
     </footer>
 
-    
-
     <script>
-   async function fetchMen(category = '') {
+  async function fetchMen(category = '') {
     try {
-        let res = await fetch('https://reebokclone-5f711-default-rtdb.firebaseio.com/men_Cat.json');
+        let res = await fetch('https://reebokclone-5f711-default-rtdb.firebaseio.com/women_Cat.json');
         let data = await res.json();
 
         // Filter data based on category if provided
@@ -441,9 +443,9 @@ function createCard(item) {
     image.src = item.image_url || 'file-VGYnLcyLgzFzSdXtWwaSGu'; // Use the uploaded image as fallback
     image.alt = item.name;
     image.classList.add('item-image');
-    image.addEventListener('click',()=>{
-        openProductDetails(item)
-    })
+    image.addEventListener('click', () => {
+                openProductDetails(item);
+            });
 
     let name = document.createElement('h4');
     name.textContent = item.name;
@@ -452,11 +454,11 @@ function createCard(item) {
     rate.textContent = `${item.price}`;
 
     let category = document.createElement('p');
-    category.textContent = item.category;
+    category.textContent = "Unisex Lifestyle Shoes\nMultiple Colours Available";
 
     const wishlistIcon = document.createElement('span');
     wishlistIcon.className = "wishlist-icon";
-    wishlistIcon.innerHTML = "&#9825;"; 
+    wishlistIcon.innerHTML = "&#9825;";
     wishlistIcon.addEventListener('click', () => {
         const added = addWishList(item);
         if (added) {
@@ -476,10 +478,11 @@ function createCard(item) {
 }
 
 // Event listeners for category buttons
-document.getElementById('shoes').addEventListener('click', () => fetchMen('Men\'s Lifestyle Sneaker'));
-document.getElementById('clothing').addEventListener('click', () => fetchMen('Men\'s Clothing'));
-document.getElementById('accessories').addEventListener('click', () => fetchMen('Men\'s Accessories'));
+document.getElementById('shoes').addEventListener('click', () => fetchMen('Women\'s Lifestyle Sneaker'));
+document.getElementById('clothing').addEventListener('click', () => fetchMen('Women\'s Clothing'));
+document.getElementById('accessories').addEventListener('click', () => fetchMen('Women\'s Accessories'));
 
+// Add item to wishlist
 function addWishList(item) {
     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     const exists = wishlist.some(wishlistItem => wishlistItem.name === item.name);
@@ -491,12 +494,16 @@ function addWishList(item) {
     return false; // Indicate that the item already exists
 }
 
-function openProductDetails(item){
-    localStorage.setItem('productDetails',JSON.stringify(item))
-    window.location.href='men_product_detail.html'
-}
+function openProductDetails(item) {
+            // Store product details in localStorage
+            localStorage.setItem('productDetails', JSON.stringify(item));
+            // open a product deatils page
+            window.location.href = 'women_product-details.html';
+        }
+
 
 fetchMen();
+
 
     </script>
 </body>
