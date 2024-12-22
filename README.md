@@ -24,7 +24,6 @@ Access the project here: [Reebok Clone](https://ranjeet7875.github.io/Backend_Bu
 ## Features
 1. **Authentication**
    - **Login and Signup Pages**: Allows users to create accounts and log in seamlessly.
-   - Developer: Sachin
 
 2. **Homepage**
    - Displays featured categories and promotions.
@@ -46,7 +45,6 @@ Access the project here: [Reebok Clone](https://ranjeet7875.github.io/Backend_Bu
 
 6. **Checkout System**
    - Allows users to input shipping details, select payment methods, and complete transactions.
-   - Developer: Shobhan
 
 ---
 
@@ -54,6 +52,9 @@ Access the project here: [Reebok Clone](https://ranjeet7875.github.io/Backend_Bu
 - **Frontend**: HTML, CSS, JavaScript
 - **Storage**: LocalStorage (for temporary data handling)
 - **Interactivity**: EventListeners
+- Firebase: Used for Authentication and Database (API keys configured)
+
+
 
 ---
 
@@ -86,11 +87,38 @@ Access the project here: [Reebok Clone](https://ranjeet7875.github.io/Backend_Bu
 
 ## Screenshots
 Include screenshots here to highlight key pages such as the 
+login page:
+![image](https://github.com/user-attachments/assets/f544dbfc-1882-48ad-a4e1-fd4d2e36a6f1)
+
 Homepage,
 ![image](https://github.com/user-attachments/assets/296efdb5-c4ab-49aa-9969-b8d3d44d0dc3)
+![image](https://github.com/user-attachments/assets/fc37751d-fde6-498a-b21d-4b28c47f9963)
+![image](https://github.com/user-attachments/assets/5912880b-cec7-4dd3-93d9-d50d6b977b81)
 
 
-Product Page, Wishlist, and Checkout Page.
+
+Product Page:
+![image](https://github.com/user-attachments/assets/77d6e7fa-d04b-4804-b9bf-11ec44ffd9ce)
+
+![image](https://github.com/user-attachments/assets/784e360f-5114-46cc-8840-b26ddcc35ff1)
+![image](https://github.com/user-attachments/assets/2905d434-5ec9-40bd-918a-dfa398206803)
+![image](https://github.com/user-attachments/assets/5b30e576-ae0e-4dd8-a322-3f3503423ba3)
+product details page:
+![image](https://github.com/user-attachments/assets/78f578b1-ca0e-4173-bf90-7dcc2932d195)
+
+
+reebok ltd:
+![image](https://github.com/user-attachments/assets/753eba18-9b50-477e-882c-a112e178dd51)
+ stroies:
+ ![Uploading image.png…]()
+
+
+, Wishlist, 
+![image](https://github.com/user-attachments/assets/5b88a979-2f7e-49ff-a5e6-67690ca882d3)
+
+and Checkout Page.
+![image](https://github.com/user-attachments/assets/1cb97557-f1a2-4aed-9db2-2de9520ced88)
+
 
 ---
 
