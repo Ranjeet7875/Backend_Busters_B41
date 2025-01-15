@@ -17,7 +17,7 @@
 The Reebok Website Clone is a frontend web application replicating the core functionalities and design of the official Reebok website. This project was developed by a team of four members, with myself serving as the team lead. The primary objective was to implement an interactive, responsive, and user-friendly interface using HTML, CSS, and JavaScript.
 
 ### Live Demo
-Access the project here: Reebok Clone
+Click here to view the Reebok Clone live demo.
 
 ---
 
